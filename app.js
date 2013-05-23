@@ -1,11 +1,9 @@
 var express = require('express')
   , routes = require('./routes')
-  , user = require('./routes/user')
-  , test = require('./routes/test')
   , http = require('http')
   , path = require('path')
   , request = require('request')
-  , testMiddleware = require('./models/testMiddleware');
+  , testMiddleware = require('./middleware/testMiddleware');
 
 var app = module.exports = express();
 
@@ -28,8 +26,7 @@ app.configure('development', function(){
 console.log(testMiddleware);
   
 app.get('/', routes.index);
-app.get('/test', testMiddleware.index, test.test);
-app.get('/users', user.list);
+app.get('/test', testMiddleware.index, routes.test);
 
 if(process.env.DEBUG == 'true') {
   console.log("DEBUG ENABLED");
