@@ -1,15 +1,15 @@
 {
-  "name": "Express-Hogan-Template",
+  "name": "Happitec",
+  "repository":"https://github.com/everyplace/happitec.git",
   "version": "0.1.0",
   "dependencies": {
     "express": "*",
-    "http":"*",
-    "path":"*",
     "request":"*",
+    "merge-descriptors":"*",
     "hjs":"*"
   },
   "engines": {
-    "node": "0.8.x",
-    "npm": "1.1.x"
+    "node": "0.10.x",
+    "npm": "1.4.x"
   }
 }

@@ -2,6 +2,7 @@ var express = require('express')
   , routes = require('./routes')
   , http = require('http')
   , path = require('path')
+  , hogan = require('hogan.js')
   , request = require('request')
   , testMiddleware = require('./middleware/testMiddleware');
 
@@ -22,9 +23,9 @@ app.configure(function(){
 app.configure('development', function(){
   app.use(express.errorHandler());
 });
-  
 
-//configure routes  
+
+//configure routes
 app.get('/', routes.index);
 app.get('/test', testMiddleware.index, routes.test);
 
